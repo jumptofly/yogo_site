@@ -1,0 +1,10 @@
+{% load i18n staticfiles thumbnail apphooks_config_tags %}
+
+<div class="aldryn-newsblog-meta" style="margin: 5px">
+    {% if author and author.slug %}
+        <div class="meta">
+            <div class="author"><a href="{% namespace_url "article-list-by-author" author.slug namespace=namespace default='' %}">{{ author.name }}</a></div>
+            <div class="date">{{ article.publishing_date|date }}</div>
+        </div>
+    {% endif %}
+</div>
